@@ -2,7 +2,7 @@ public class LimitingRectangle {
 
     private int[][] points;
 
-    // Конструктор принимающий массив координат вида (X, Y)
+    // Конструктор принимающий массив координат вида (x, y)
     public LimitingRectangle(int[][] points) {
         this.points = points;
     }
