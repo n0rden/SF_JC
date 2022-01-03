@@ -147,12 +147,12 @@ public class Main_1 {
     }*/
 
     public static void main(String[] args) {
-        int a;
+        int a1;
         int b1;
         int c;
-        a = 1;
+        a1 = 1;
         b1 = 2;
-        c = a + b1;
+        c = a1 + b1;
         System.out.println(c);
     }
 
