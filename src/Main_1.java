@@ -133,7 +133,7 @@ public class Main_1 {
         }
     }*/
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         TicTacToe board = new TicTacToe();
         System.out.println(board.makeMove(1, 1)); // X
         System.out.println(board.makeMove(1, 1)); // 0
@@ -144,6 +144,16 @@ public class Main_1 {
         System.out.println(board.makeMove(3, 1)); // X
         System.out.println(board.makeMove(2, 2)); //
 
+    }*/
+
+    public static void main(String[] args) {
+        int a;
+        int b;
+        int c;
+        a = 1;
+        b = 2;
+        c = a + b;
+        System.out.println(c);
     }
 
 } // Main class
