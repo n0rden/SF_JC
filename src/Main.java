@@ -146,6 +146,8 @@ public class Main {
         System.out.println(board.makeMove(2, 1)); // X
         System.out.println(board.makeMove(2, 2)); // 0
         System.out.println(board.makeMove(3, 1)); // X
+        System.out.println(board.makeMove(3, 1)); // X
+        System.out.println(board.makeMove(3, 1)); // X
         System.out.println(board.makeMove(2, 2)); //
 
     }
