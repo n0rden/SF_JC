@@ -1,12 +1,83 @@
 public class Car {
 
-    int carSpeed = 0;
+    private String producer;
+    private String aClass;
+    private double weight;
+    private Driver driver;
+    private Engine engine;
 
-    public void build() {
-        System.out.println("You must build a new car");
+    public Car(String producer, String aClass, double weight, Driver driver, Engine engine) {
+        this.producer = producer;
+        this.aClass = aClass;
+        this.weight = weight;
+        this.driver = driver;
+        this.engine = engine;
     }
 
-    public void buy() {
-        System.out.println("I will buy this car");
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
+    public String getaClass() {
+        return aClass;
+    }
+
+    public void setaClass(String aClass) {
+        this.aClass = aClass;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void start() {
+        System.out.println("Поехали");
+    }
+
+    public void stop() {
+        System.out.println("Останавливаемся");
+    }
+
+    public void turnRight() {
+        System.out.println("Поворот направо");
+    }
+
+    public void turnLeft() {
+        System.out.println("Поворот налево");
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "producer='" + producer + '\'' +
+                ", aClass='" + aClass + '\'' +
+                ", weight=" + weight +
+                ", driver=" + driver +
+                ", engine=" + engine +
+                '}';
     }
 }
