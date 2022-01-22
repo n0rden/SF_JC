@@ -150,6 +150,12 @@ public class Main_1 {
         int a1;
         int b1;
         int c;
+
+        String processor, graphicCard, motherBoardModel;
+        int price;
+
+
+
         a1 = 1;
         b1 = 2;
         c = a1 + b1;

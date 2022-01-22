@@ -4,6 +4,9 @@ public class Programmer {
     private String company;
     private String position;
 
+    public String processor, graphicCard, motherBoardModel;
+    public int price;
+
     public Programmer(String name, String company) {
         this.name = name;
         this.company = company;
