@@ -1,6 +1,5 @@
 package usr.chess;
 
-
 /**
  * В классе Pawn:
  * Реализуйте конструктор, который будет принимать цвет фигуры.
@@ -28,17 +27,25 @@ public class Pawn extends ChessPiece {
 	@Override
 	public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
 		if (line != toLine && column == toColumn && chessBoard.checkPos(toLine) && chessBoard.checkPos(toColumn)) {
-			if (color.equals("White") && line == 1) {
-				if (toLine - line <= 2) {
+			if (color.equals("White") && line == 1 &&
+					toLine - line <= 2 && chessBoard.board[line][column].check ) {
+					chessBoard.board[line][column].check = false;
 					return true;
 				}
-			} else if (color.equals("Black") && line == 6) {
-				if (line - toLine <= 2) {
+
+			if (color.equals("Black") && line == 6 &&
+					line - toLine <= 2 && chessBoard.board[line][column].check) {
+					chessBoard.board[line][column].check = false;
 					return true;
 				}
+			if (color.equals("White") && toLine - line == 1) {
+				return true;
 			}
-		}
-		return false;
+
+			if (color.equals("Black") && line - toLine == 1) {
+				return true;
+			}
+		} return false;
 	}
 	
 	@Override

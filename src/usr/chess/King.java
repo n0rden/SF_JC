@@ -24,7 +24,9 @@ public class King extends ChessPiece {
 		super(color);
 	}
 	
-	/* 
+	/**
+	 * public boolean isUnderAttack(ChessBoard board, int line, int column)
+	 *
 	 * Проверка шаха: проверяем фигуры с противоположным цветом, передавая в них
 	 * значения line и column из метода isUnderAttack короля. Если фигура может
 	 * прийти по данным координатам, то шах, иначе нет.
