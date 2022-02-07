@@ -18,36 +18,31 @@ public class Pawn extends ChessPiece {
 	public Pawn(String color) {
 		super(color);
 	}
-	
+
 	@Override
 	public String getColor() {
 		return this.color;
 	}
-	
+
 	@Override
 	public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-		if (line != toLine && column == toColumn && chessBoard.checkPos(toLine) && chessBoard.checkPos(toColumn)) {
-			if (color.equals("White") && line == 1 &&
-					toLine - line <= 2 && chessBoard.board[line][column].check ) {
-					chessBoard.board[line][column].check = false;
+		if (chessBoard.checkPos(toLine) && chessBoard.checkPos(toColumn)) {
+			if (color.equals("White") && this.check) {
+				if (toLine - line <= 2 && canMove(chessBoard, this.color, line, column, toLine, toColumn)) {
 					return true;
-				}
-
-			if (color.equals("Black") && line == 6 &&
-					line - toLine <= 2 && chessBoard.board[line][column].check) {
-					chessBoard.board[line][column].check = false;
+				} else if (color.equals("White") && toLine - line <= 2 &&
+						canMove(chessBoard, this.color, line, column, toLine, toColumn)) return true;
+			} else if (color.equals("Black") && this.check) {
+				if (line - toLine <= 2 &&
+						canMove(chessBoard, this.color, line, column, toLine, toColumn)) {
 					return true;
-				}
-			if (color.equals("White") && toLine - line == 1) {
-				return true;
+				} else if (color.equals("Black") && line - toLine <= 2 &&
+						canMove(chessBoard, this.color, line, column, toLine, toColumn)) return true;
 			}
-
-			if (color.equals("Black") && line - toLine == 1) {
-				return true;
-			}
-		} return false;
+		}
+		return false;
 	}
-	
+
 	@Override
 	public String getSymbol() {
 		return "P";
