@@ -67,8 +67,8 @@ public class ChessBoard {
     public boolean checkPos(int pos) {
         return pos >= 0 && pos <= 7;
     }
-    
-  // Long castling
+
+    // Long castling
     public boolean castling0() {
         if (nowPlayer.equals("White")) {
             if (board[0][0] == null || board[0][4] == null) return false;
@@ -77,11 +77,11 @@ public class ChessBoard {
                 if (board[0][0].getColor().equals("White") && board[0][4].getColor().equals("White") &&
                         board[0][0].check && board[0][4].check &&
                         !new King("White").isUnderAttack(this, 0, 2)) { // check that position not in under attack
-                   
+
                     board[0][4] = null;
                     board[0][2] = new King("White");   // move King
                     board[0][2].check = false;
-                    
+
                     board[0][0] = null;
                     board[0][3] = new Rook("White");   // move Rook
                     board[0][3].check = false;
@@ -96,11 +96,11 @@ public class ChessBoard {
                 if (board[7][0].getColor().equals("Black") && board[7][4].getColor().equals("Black") &&
                         board[7][0].check && board[7][4].check &&
                         !new King("Black").isUnderAttack(this, 7, 2)) { // check that position not in under attack
-                    
+
                     board[7][4] = null;
                     board[7][2] = new King("Black");   // move King
                     board[7][2].check = false;
-                    
+
                     board[7][0] = null;
                     board[7][3] = new Rook("Black");   // move Rook
                     board[7][3].check = false;
@@ -110,8 +110,8 @@ public class ChessBoard {
             } else return false;
         }
     }
-    
- // Short castling
+
+    // Short castling
     public boolean castling7() {
         if (nowPlayer.equals("White")) {
             if (board[0][7] == null || board[0][4] == null) return false;
@@ -120,11 +120,11 @@ public class ChessBoard {
                 if (board[0][7].getColor().equals("White") && board[0][4].getColor().equals("White") &&
                         board[0][7].check && board[0][4].check &&
                         !new King("White").isUnderAttack(this, 0, 6)) { // check that position not in under attack
-                    
+
                     board[0][4] = null;
                     board[0][6] = new King("White");   // move King
                     board[0][6].check = false;
-                    
+
                     board[0][7] = null;
                     board[0][5] = new Rook("White");   // move Rook
                     board[0][5].check = false;
@@ -139,11 +139,11 @@ public class ChessBoard {
                 if (board[7][7].getColor().equals("Black") && board[7][4].getColor().equals("Black") &&
                         board[7][7].check && board[7][4].check &&
                         !new King("Black").isUnderAttack(this, 7, 6)) { // check that position not in under attack
-                    
+
                     board[7][4] = null;
                     board[7][6] = new King("Black");   // move King
                     board[7][6].check = false;
-                    
+
                     board[7][7] = null;
                     board[7][5] = new Rook("Black");   // move Rook
                     board[7][5].check = false;

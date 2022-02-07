@@ -20,7 +20,7 @@ public abstract class ChessPiece {
 		this.color = color;
 	}
 
-	public static boolean canMove(ChessBoard chessBoard, String color, int line, int column, int toLine, int toColumn) {
+	public static boolean canMove(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
 		if (chessBoard.board[toLine][toColumn] != null && chessBoard.board[toLine][toColumn].getColor().equals(chessBoard.board[line][column].getColor())) return false;
 
 		// pawn attack
