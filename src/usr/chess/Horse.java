@@ -31,8 +31,8 @@ public class Horse extends ChessPiece {
         if (line != toLine && column != toColumn && chessBoard.checkPos(toLine) && chessBoard.checkPos(toColumn)) {
             if (Math.abs(toLine - line) == 2 || Math.abs(toColumn - column) == 2) {
                 if (Math.abs(toLine - line) == 1 || Math.abs(toColumn - column) == 1) {
-                    if (chessBoard.board[toLine][toColumn].getColor() != this.color ||
-                            chessBoard.board[toLine][toColumn] == null) return true;
+                    if (chessBoard.board[toLine][toColumn] == null ||
+                            !chessBoard.board[toLine][toColumn].getColor().equals(this.color)) return true;
                 }
             }
         }
