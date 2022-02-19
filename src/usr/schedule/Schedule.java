@@ -8,15 +8,17 @@ public class Schedule {
     Event[] events = new Event[10];
 
     public void addEvent(Event event) {
-        for (int i = 0; i < events.length; i++) {
-            if (events[i] == null) {
-                events[i] = event;
-                System.out.println("Задача добавлена");
-                break;
+        int arrLength = events.length;
 
-            } else {
-                System.out.println("Расписание на день полное");
-                break;
+        if (events[arrLength - 1] != null) {
+            System.out.println("Расписание на день полное");
+        } else {
+            for (int i = 0; i < arrLength; i++) {
+                if (events[i] == null) {
+                    events[i] = event;
+                    System.out.println("Задача добавлена");
+                    break;
+                }
             }
         }
     }
