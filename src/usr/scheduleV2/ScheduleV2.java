@@ -19,7 +19,7 @@ public class ScheduleV2 {
             for (int i = 0; i < arrLength; i++) {
                 if (events[i] == null) {
                     events[i] = event;
-                    System.out.println("Задача добавлена");
+                    System.out.println("Задача добавлена в расписание");
                     break;
                 }
             }
@@ -40,9 +40,8 @@ public class ScheduleV2 {
                 }
             }
             fos.close();
-            System.out.println("Данные в файл записаны");
+            System.out.println("Данные записаны в файл");
         }
-
     }
 
     public void show() {
