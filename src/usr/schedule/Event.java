@@ -1,15 +1,14 @@
 package usr.schedule;
 
-import java.text.ParseException;
 import java.util.Calendar;
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Event {
     private String title;
-    private Calendar eventInfo;
+    private Calendar evenStart;
+    private Calendar evenStop;
     private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy kk:mm");
-
 	
 	/*
 	private String date;
@@ -23,12 +22,14 @@ public class Event {
         title = dateAndTitle.substring(dateAndTitle.indexOf(" ",index + 1), dateAndTitle.length());
         String dateAndTime = dateAndTitle.substring(0, index);
         Date dateTime = sdf.parse(dateAndTitle);
-        sdf.setCalendar(eventInfo);
+        sdf.setCalendar(evenStart);
+
+        System.out.println(sdf.format(evenStart.getTime()));
     }
 
     @Override
     public String toString() {
         return "Задача: " + title +
-                "\nзапланирована на " + sdf.format(eventInfo.getTime());
+                "\nзапланирована на " + sdf.format(evenStart.getTime());
     }
 }

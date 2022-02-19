@@ -9,9 +9,11 @@ public class Schedule {
 
     public void addEvent(Event event) {
         for (int i = 0; i < events.length; i++) {
-            if (events[i] != null) {
+            if (events[i] == null) {
                 events[i] = event;
                 System.out.println("Задача добавлена");
+                break;
+
             } else {
                 System.out.println("Расписание на день полное");
                 break;
