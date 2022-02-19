@@ -32,6 +32,6 @@ public class Event {
     @Override
     public String toString() {
         return "Задача: " + title +
-                "\nЗапланирована на :" + sdf.format(evenStart.getTime());
+                "\nЗапланирована на: " + sdf.format(evenStart.getTime());
     }
 }
