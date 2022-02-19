@@ -12,11 +12,7 @@ public class Schedule {
 		events.add(event);
 	}
 	
-	@Override
-	public String toString() {
-		return null;
-	}
-	
+
 	public static void saveToFile() {
 		
 	}

@@ -22,6 +22,7 @@ public class Event {
 
         String dateAndTime = dateAndTitle.substring(0, dateAndTitle.indexOf(" "));
         Date dateTime = sdf.parse(dateAndTitle);
+        sdf.setCalendar(eventInfo);
 		
 		/*
 		this.date = date;
