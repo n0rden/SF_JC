@@ -9,13 +9,6 @@ public class Event {
     private Calendar evenStart;
     private Calendar evenStop;
     private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy kk:mm");
-	
-	/*
-	private String date;
-	private String startTime;
-	private String stopTime;
-
-	*/
 
     public Event(String dateAndTitle) throws Exception {
         evenStart = Calendar.getInstance();
