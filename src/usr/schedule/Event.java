@@ -12,8 +12,7 @@ public class Event {
     public Event(String dateAndTitle) throws Exception {
         evenStart = Calendar.getInstance();
         int index = dateAndTitle.indexOf(" ");
-        title = dateAndTitle.substring(dateAndTitle.indexOf(" ",index + 1) + 1, dateAndTitle.length());
-        String dateAndTime = dateAndTitle.substring(0, index);
+        title = dateAndTitle.substring(dateAndTitle.indexOf(" ",index + 1) + 1);
         Date dateTime = sdf.parse(dateAndTitle);
         evenStart.setTime(dateTime);
     }
