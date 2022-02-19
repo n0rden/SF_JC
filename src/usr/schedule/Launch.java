@@ -8,13 +8,13 @@ public  class Launch {
 		Scanner sc = new Scanner(System.in);
 		Schedule schedule = new Schedule();
 		
-		System.out.println("-= Планировщик задач =-\n" +
-				"Введите задачу в формате дата, время и название задачи \n" +
+		System.out.println("\n-= Планировщик задач =-\n\n" +
+				"Введите задачу в формате дата, время и название задачи\n" +
 				"(пример: 23-10-2021 10:00 Стоматолог)");
 
 		help();
 		
-		System.out.print("Введите задачу: ");
+		System.out.print("Введите задачу/команду: ");
 		String str = sc.nextLine();
 
 		while(!str.equals("exit")) {
@@ -28,9 +28,9 @@ public  class Launch {
 	}
 
 	public static void help() {
-		System.out.println("Комманды управления программой:\n" +
+		System.out.println("\nКомманды управления программой:\n" +
 				"show - для вывода в консоль расписания\n" +
-				"save - для сохранения в файл (пример пути: C:\\Test\\Schedule.txt)\n" +
+				"save - для сохранения в файл (в папку проекта)\n" +
 				"help - для вывода комманд управления программой\n" +
 				"exit - для выхода из программы\n");
 	}
