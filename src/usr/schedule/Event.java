@@ -1,20 +1,27 @@
 package usr.schedule;
 
+import java.text.ParseException;
 import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Event {
-	
-	Calendar eventInfo;
-	int eventDuration;
+    private String title;
+    private Calendar eventInfo;
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy kk:mm");
+
 	
 	/*
 	private String date;
 	private String startTime;
 	private String stopTime;
-	private String title;
+
 	*/
-	
-	public Event(String date) {
+
+    public Event(String dateAndTitle) throws Exception {
+
+        String dateAndTime = dateAndTitle.substring(0, dateAndTitle.indexOf(" "));
+        Date dateTime = sdf.parse(dateAndTitle);
 		
 		/*
 		this.date = date;
@@ -22,5 +29,5 @@ public class Event {
 		this.stopTime = stopTime;
 		this.title = title;
 		*/
-	}	
+    }
 }
