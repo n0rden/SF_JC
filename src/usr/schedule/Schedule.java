@@ -26,7 +26,6 @@ public class Schedule {
         }
     }
 
-
     public void saveToFile() throws Exception {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd_MM_yyyy_kk_mm");
@@ -50,7 +49,6 @@ public class Schedule {
             writer.close();
             System.out.println("Данные в файл записаны");
         }
-
     }
 
     public void show() {
@@ -64,13 +62,5 @@ public class Schedule {
                 }
             }
         }
-    }
-
-    public void help() {
-        System.out.println("Комманды управления программой:\n" +
-                "show - для вывода в консоль расписания\n" +
-                "save - для сохранения в файл (пример пути: C:\\Test\\Schedule.txt)\n" +
-                "help - для вывода комманд управления программой\n" +
-                "exit - для выхода из программы\n");
     }
 }
