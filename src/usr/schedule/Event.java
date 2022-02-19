@@ -18,8 +18,10 @@ public class Event {
 	*/
 
     public Event(String dateAndTitle) throws Exception {
+        evenStart = Calendar.getInstance();
+        evenStop = Calendar.getInstance();
         int index = dateAndTitle.indexOf(" ");
-        title = dateAndTitle.substring(dateAndTitle.indexOf(" ",index + 1), dateAndTitle.length());
+        title = dateAndTitle.substring(dateAndTitle.indexOf(" ",index + 1) + 1, dateAndTitle.length());
         String dateAndTime = dateAndTitle.substring(0, index);
         Date dateTime = sdf.parse(dateAndTitle);
         sdf.setCalendar(evenStart);
@@ -30,6 +32,6 @@ public class Event {
     @Override
     public String toString() {
         return "Задача: " + title +
-                "\nзапланирована на " + sdf.format(evenStart.getTime());
+                "\nЗапланирована на :" + sdf.format(evenStart.getTime());
     }
 }
