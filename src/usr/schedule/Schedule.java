@@ -20,4 +20,12 @@ public class Schedule {
 	public static void saveToFile() {
 		
 	}
+
+	public static void show() {
+
+	}
+
+	public static void help() {
+
+	}
 }
