@@ -30,9 +30,6 @@ public  class Launch {
 			else schedule.addEvent(new Event(str));
 			str = sc.nextLine();
 		}
-		
 		sc.close();
-		
 	}
-
 }
