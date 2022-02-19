@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public  class Launch {
 	
-	static public void start() {
+	static public void start() throws Exception {
 		Scanner sc = new Scanner(System.in);
+		Schedule schedule = new Schedule();
 		
 		System.out.println("-= ѕланировщик задач =-\n\n" +
 				"¬ведите задачу в формате дата, врем€ (в промежутке между 06:00 и 19:00)\n" +
@@ -20,10 +21,14 @@ public  class Launch {
 				"exit - дл€ выхода из программы\n");
 		
 		System.out.print("¬ведите задачу: ");
-		
-		while(!sc.nextLine().equals("exit")) {
-			System.out.println("Hello!");
-			
+		String str = sc.nextLine();
+
+		while(!str.equals("exit")) {
+			if (str.equals("show")) schedule.show();
+			else if (str.equals("save")) schedule.saveToFile();
+			else if(str.equals("help")) schedule.help();
+			else schedule.addEvent(new Event(str));
+			str = sc.nextLine();
 		}
 		
 		sc.close();

@@ -19,16 +19,16 @@ public class Event {
 	*/
 
     public Event(String dateAndTitle) throws Exception {
-
-        String dateAndTime = dateAndTitle.substring(0, dateAndTitle.indexOf(" "));
+        int index = dateAndTitle.indexOf(" ");
+        title = dateAndTitle.substring(dateAndTitle.indexOf(" ",index + 1), dateAndTitle.length());
+        String dateAndTime = dateAndTitle.substring(0, index);
         Date dateTime = sdf.parse(dateAndTitle);
         sdf.setCalendar(eventInfo);
-		
-		/*
-		this.date = date;
-		this.startTime = startTime;
-		this.stopTime = stopTime;
-		this.title = title;
-		*/
+    }
+
+    @Override
+    public String toString() {
+        return "Задача: " + title +
+                "\nзапланирована на " + sdf.format(eventInfo.getTime());
     }
 }
