@@ -29,7 +29,7 @@ public class Schedule {
 
     public void saveToFile() throws Exception {
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd_MM_yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd_MM_yyyy_kk_mm");
 
         file = new File("Schedule_" + sdf.format(calendar.getTime()) + ".txt");
 

@@ -16,8 +16,6 @@ public class Event {
         String dateAndTime = dateAndTitle.substring(0, index);
         Date dateTime = sdf.parse(dateAndTitle);
         evenStart.setTime(dateTime);
-
-        System.out.println(sdf.format(evenStart.getTime()));
     }
 
     @Override
