@@ -1,7 +1,6 @@
 package usr.scheduleV2;
 
 import java.io.FileOutputStream;
-import java.io.FileInputStream;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -34,9 +33,9 @@ public class ScheduleV2 {
         if (events[0] == null) {
             System.out.println("Расписание пустое, сохранять нечего");
         } else {
-            for (int i = 0; i < events.length; i++) {
-                if (events[i] != null) {
-                    fos.write(events[i].toString().getBytes(StandardCharsets.UTF_8));
+            for (Event event : events) {
+                if (event != null) {
+                    fos.write(event.toString().getBytes(StandardCharsets.UTF_8));
                 }
             }
             fos.close();
@@ -49,9 +48,9 @@ public class ScheduleV2 {
         if (events[0] == null) {
             System.out.println("Расписание пустое");
         } else {
-            for (int i = 0; i < events.length; i++) {
-                if (events[i] != null) {
-                    System.out.println(events[i]);
+            for (Event event : events) {
+                if (event != null) {
+                    System.out.println(event);
                 }
             }
         }
