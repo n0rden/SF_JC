@@ -1,52 +1,63 @@
 package usr.scheduleV3;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class ScheduleV3 {
-
-    Event[] events = new Event[10];
+    int taskCount = 10;
+    Event[] events = new Event[taskCount];
 
     public void addEvent(Event event) {
-        int arrLength = events.length;
 
-        if (events[arrLength - 1] != null) {
-            System.out.println("Расписание на день полное");
+        if (events[taskCount - 1] != null) {
+            System.out.println("Time is busy");
         } else {
-            for (int i = 0; i < arrLength; i++) {
+            for (int i = 0; i < taskCount; i++) {
                 if (events[i] == null) {
                     events[i] = event;
-                    System.out.println("Задача добавлена в расписание");
+                    System.out.println("Task added");
                     break;
                 }
             }
         }
     }
 
-    public void saveToFile() throws Exception {
+    public void saveToFile(){
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd_MM_yyyy_kk_mm");
-        FileOutputStream fos = new FileOutputStream("Schedule_" + sdf.format(calendar.getTime()) + ".txt");
+        FileOutputStream fos = null;
+
+        try {
+            fos = new FileOutputStream("Schedule_" + sdf.format(calendar.getTime()) + ".txt");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error!!! File not exist");
+        }
 
         if (events[0] == null) {
-            System.out.println("Расписание пустое, сохранять нечего");
+            System.out.println("Schedule is empty. Nothing to save");
         } else {
             for (Event event : events) {
                 if (event != null) {
-                    fos.write(event.toString().getBytes(StandardCharsets.UTF_8));
+                    try {
+                        fos.write(event.toString().getBytes(StandardCharsets.UTF_8));
+                    } catch (IOException e) {
+                        System.out.println("Error!!! File not saved");
+                        System.out.println(e.getMessage());
+                    }
                 }
             }
-            fos.close();
-            System.out.println("Данные записаны в файл");
+            System.out.println("Schedule saved");
         }
     }
 
     public void show() {
 
         if (events[0] == null) {
-            System.out.println("Расписание пустое");
+            System.out.println("Schedule is empty");
         } else {
             for (Event event : events) {
                 if (event != null) {

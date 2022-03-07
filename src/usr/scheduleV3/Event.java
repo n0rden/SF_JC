@@ -7,7 +7,7 @@ import java.util.Date;
 public class Event {
     private String title;
     private Calendar evenStart;
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy kk:mm");
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy kk:mm");
 
     public Event(String dateAndTitle) throws Exception {
         evenStart = Calendar.getInstance();
@@ -19,8 +19,8 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Задача: " + title +
-                "\nЗапланирована на: " + sdf.format(evenStart.getTime()) +
+        return "Task: " + title +
+                "\nScheduled for: " + sdf.format(evenStart.getTime()) +
                 "\n";
     }
 }
