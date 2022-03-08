@@ -34,8 +34,7 @@ public class Launch {
                     schedule.addEvent(new Event(str));
                 } catch (ParseException e) {
                     System.out.println("Error!!! Incorrect input data.");
-                    System.out.println(e.getMessage());
-                    System.out.println("Pleace try again (example: 23.10.2021 10:00 Dentist)");
+                    System.out.println("Please try again (example: 23.10.2021 10:00 Dentist)");
                 }
             }
             str = sc.nextLine();
