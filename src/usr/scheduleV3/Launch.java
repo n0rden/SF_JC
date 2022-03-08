@@ -10,13 +10,15 @@ public class Launch {
     public static final String HELP = "help - to output program control commands";
     public static final String EXIT = "exit - to exit the program";
 
-    static public void start() throws Exception {
+    static public void start() {
         Scanner sc = new Scanner(System.in);
         ScheduleV3 schedule = new ScheduleV3();
 
-        System.out.println("-=| Scheduler |=-\n\n" +
-                "Enter the task in the format date, time and name of the task\n" +
-                "(example: 23.10.2021 10:00 Dentist)");
+        System.out.println("""
+                -=| Scheduler |=-
+
+                Enter the task in the format date, time and name of the task
+                (example: 23.10.2021 10:00 Dentist)""");
 
         help();
 
