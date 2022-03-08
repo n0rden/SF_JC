@@ -18,7 +18,7 @@ package usr.scheduleV3;
 */
 
 public class testScheduler {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Launch.start();
     }
 }
