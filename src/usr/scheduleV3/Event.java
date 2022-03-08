@@ -3,6 +3,7 @@ package usr.scheduleV3;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 public class Event {
     private String title;
@@ -15,6 +16,20 @@ public class Event {
         title = dateAndTitle.substring(dateAndTitle.indexOf(" ",index + 1) + 1);
         Date dateTime = sdf.parse(dateAndTitle);
         evenStart.setTime(dateTime);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Event event = (Event) o;
+        return title.equals(event.title) &&
+                evenStart.equals(event.evenStart);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, evenStart);
     }
 
     @Override
