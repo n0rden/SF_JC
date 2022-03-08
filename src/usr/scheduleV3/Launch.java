@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Launch {
 
     public static final String SHOW = "show - to output a schedule to the console";
-    public static final String SAVE = "save - to save to a file (example path: C:\\Test\\Schedule.txt)";
+    public static final String SAVE = "save - to save to a file";
     public static final String HELP = "help - to output program control commands";
     public static final String EXIT = "exit - to exit the program";
 

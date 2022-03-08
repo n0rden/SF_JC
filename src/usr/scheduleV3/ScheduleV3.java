@@ -3,28 +3,21 @@ package usr.scheduleV3;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.*;
 
 public class ScheduleV3 {
-    int taskCount = 10;
-    Event[] events = new Event[taskCount];
+    Set<Event> events = new TreeSet<>();
 
     public void addEvent(Event event) {
-
-        if (events[taskCount - 1] != null) {
+        if (events.contains(event)) {
             System.out.println("Time is busy");
         } else {
-            for (int i = 0; i < taskCount; i++) {
-                if (events[i] == null) {
-                    events[i] = event;
-                    System.out.println("Task added");
-                    break;
-                }
-            }
+            events.add(event);
+            System.out.println("Task added");
         }
     }
 
-    public void saveToFile(){
+    public void saveToFile() {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd_MM_yyyy_kk_mm");
         FileOutputStream fos = null;
@@ -35,7 +28,7 @@ public class ScheduleV3 {
             System.out.println("Error!!! File not exist");
         }
 
-        if (events[0] == null) {
+        if (events.isEmpty()) {
             System.out.println("Schedule is empty. Nothing to save");
         } else {
             for (Event event : events) {
@@ -54,13 +47,11 @@ public class ScheduleV3 {
 
     public void show() {
 
-        if (events[0] == null) {
+        if (events.isEmpty()) {
             System.out.println("Schedule is empty");
         } else {
             for (Event event : events) {
-                if (event != null) {
-                    System.out.println(event);
-                }
+                System.out.println(event);
             }
         }
     }
