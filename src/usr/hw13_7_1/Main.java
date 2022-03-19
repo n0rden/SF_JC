@@ -14,6 +14,7 @@ public class Main {
         SaveAsThread saveAsThread2 = new SaveAsThread(intsArr2, "saveAsThread2.txt", "thread2");
         SaveAsThread saveAsThread3 = new SaveAsThread(intsArr3, "saveAsThread3.txt", "thread3");
 
+        // запускаем потоки на выполнение
         saveAsThread1.start();
         saveAsThread2.start();
         saveAsThread3.start();
