@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class SaveAsThread implements Runnable {
-    private int[] intsArr;      // записываемый массив
-    private String filename;    // им€ файла
-    private String threadName;  // им€ потока
-    private Thread thread;      // ссылка на текущий поток
+    private final int[] intsArr;      // записываемый массив
+    private final String filename;    // им€ файла
+    private final String threadName;  // им€ потока
+    private final Thread thread;      // ссылка на текущий поток
 
     //  онструктор - получает 3 параметра:
     // intsArr - массив, который нужно записать в файл;
@@ -36,8 +36,8 @@ public class SaveAsThread implements Runnable {
 
             // «аписываем массив intsArr в файл
             printStream.println(intsArr.length);
-            for (int i = 0; i < intsArr.length; i++) {
-                printStream.println(intsArr[i]);
+            for (int j : intsArr) {
+                printStream.println(j);
             }
 
             printStream.close();
