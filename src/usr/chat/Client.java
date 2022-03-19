@@ -11,7 +11,6 @@ class Client implements Runnable {
     Socket socket;
 
     public Client(Socket socket) {
-
         this.socket = socket;
     }
 
