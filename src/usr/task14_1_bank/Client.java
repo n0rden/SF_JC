@@ -7,8 +7,8 @@ public class Client extends Thread {
         int MONEY_VOL = 1000;
 
         while (true) {
-            Bank.setMoney(MONEY_VOL);
             Bank.setMoney(MONEY_VOL * (-1));
+            Bank.setMoney(MONEY_VOL);
         }
     }
 }
