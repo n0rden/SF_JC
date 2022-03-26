@@ -10,6 +10,10 @@ public class Main {
         new Thread(new Supplier(warehouse)).start();
         new Thread(new Supplier(warehouse)).start();
 
-
+        new Thread(new Consumer(warehouse)).start();
+        new Thread(new Consumer(warehouse)).start();
+        new Thread(new Consumer(warehouse)).start();
+        new Thread(new Consumer(warehouse)).start();
+        new Thread(new Consumer(warehouse)).start();
     }
 }
